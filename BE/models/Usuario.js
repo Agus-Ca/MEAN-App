@@ -1,4 +1,5 @@
-const { Schema } = require("mongoose");
+const mongoose = require('mongoose');
+const { Schema } = require('mongoose');
 
 
 
@@ -20,4 +21,4 @@ const UsuarioSchema = Schema({
 
 
 
-module.exports = model( 'Usuario', UsuarioSchema );
+module.exports = mongoose.model( 'Usuario', UsuarioSchema );
