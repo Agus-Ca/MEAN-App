@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,7 +11,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class RegisterComponent {
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) { }
 
   miFormulario: FormGroup = this.formBuilder.group({
@@ -22,5 +24,7 @@ export class RegisterComponent {
   register(): void {
     console.log(this.miFormulario.value);
     console.log(this.miFormulario.valid);
+
+    this.router.navigateByUrl('/dashboard');
   }
 }
